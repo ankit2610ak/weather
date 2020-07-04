@@ -1,0 +1,362 @@
+[
+  {
+    "id": 14256,
+    "city": {
+      "id": {
+        "$numberLong": "14256"
+      },
+      "name": "Azadshahr",
+      "findname": "AZADSHAHR",
+      "country": "IR",
+      "coord": {
+        "lon": 48.570728,
+        "lat": 34.790878
+      },
+      "zoom": {
+        "$numberLong": "10"
+      }
+    }
+  },
+  {
+    "id": 18918,
+    "city": {
+      "id": {
+        "$numberLong": "18918"
+      },
+      "name": "Protaras",
+      "findname": "PROTARAS",
+      "country": "CY",
+      "coord": {
+        "lon": 34.058331,
+        "lat": 35.012501
+      },
+      "zoom": {
+        "$numberLong": "6"
+      }
+    }
+  },
+  {
+    "id": 23814,
+    "city": {
+      "id": {
+        "$numberLong": "23814"
+      },
+      "name": "Kahriz",
+      "findname": "KAHRIZ",
+      "country": "IR",
+      "coord": {
+        "lon": 47.055302,
+        "lat": 34.383801
+      },
+      "zoom": {
+        "$numberLong": "7"
+      }
+    }
+  },
+  {
+    "id": 50672,
+    "city": {
+      "id": {
+        "$numberLong": "50672"
+      },
+      "name": "Wanlaweyn",
+      "findname": "WANLAWEYN",
+      "country": "SO",
+      "coord": {
+        "lon": 44.893799,
+        "lat": 2.6185
+      },
+      "zoom": {
+        "$numberLong": "9"
+      }
+    }
+  },
+  {
+    "id": 52867,
+    "city": {
+      "id": {
+        "$numberLong": "52867"
+      },
+      "name": "Qoryooley",
+      "findname": "QORYOOLEY",
+      "country": "SO",
+      "coord": {
+        "lon": 44.529991,
+        "lat": 1.78784
+      },
+      "zoom": {
+        "$numberLong": "8"
+      }
+    }
+  },
+  {
+    "id": 53157,
+    "city": {
+      "id": {
+        "$numberLong": "53157"
+      },
+      "name": "Qandala",
+      "findname": "QANDALA",
+      "country": "SO",
+      "coord": {
+        "lon": 49.872822,
+        "lat": 11.47197
+      },
+      "zoom": {
+        "$numberLong": "8"
+      }
+    }
+  },
+  {
+    "id": 53654,
+    "city": {
+      "id": {
+        "$numberLong": "53654"
+      },
+      "name": "Mogadishu",
+      "findname": "MOGADISHU",
+      "country": "SO",
+      "coord": {
+        "lon": 45.34375,
+        "lat": 2.03711
+      },
+      "zoom": {
+        "$numberLong": "1"
+      }
+    }
+  },
+  {
+    "id": 54715,
+    "city": {
+      "id": {
+        "$numberLong": "54715"
+      },
+      "name": "Luuq",
+      "findname": "LUUQ",
+      "country": "SO",
+      "coord": {
+        "lon": 42.544498,
+        "lat": 3.79376
+      },
+      "zoom": {
+        "$numberLong": "8"
+      }
+    }
+  },
+  {
+    "id": 55671,
+    "city": {
+      "id": {
+        "$numberLong": "55671"
+      },
+      "name": "Kismaayo",
+      "findname": "KISMAAYO",
+      "country": "SO",
+      "coord": {
+        "lon": 42.545361,
+        "lat": -0.35817
+      },
+      "zoom": {
+        "$numberLong": "6"
+      }
+    }
+  },
+  {
+    "id": 56166,
+    "city": {
+      "id": {
+        "$numberLong": "56166"
+      },
+      "name": "Jilib",
+      "findname": "JILIB",
+      "country": "SO",
+      "coord": {
+        "lon": 42.785351,
+        "lat": 0.48829
+      },
+      "zoom": {
+        "$numberLong": "9"
+      }
+    }
+  },
+  {
+    "id": 56335,
+    "city": {
+      "id": {
+        "$numberLong": "56335"
+      },
+      "name": "Jawhar",
+      "findname": "JAWHAR",
+      "country": "SO",
+      "coord": {
+        "lon": 45.500481,
+        "lat": 2.78087
+      },
+      "zoom": {
+        "$numberLong": "8"
+      }
+    }
+  },
+  {
+    "id": 56399,
+    "city": {
+      "id": {
+        "$numberLong": "56399"
+      },
+      "name": "Jamaame",
+      "findname": "JAMAAME",
+      "country": "SO",
+      "coord": {
+        "lon": 42.744968,
+        "lat": 0.06968
+      },
+      "zoom": {
+        "$numberLong": "6"
+      }
+    }
+  },
+  {
+    "id": 57289,
+    "city": {
+      "id": {
+        "$numberLong": "57289"
+      },
+      "name": "Hargeysa",
+      "findname": "HARGEYSA",
+      "country": "SO",
+      "coord": {
+        "lon": 44.064999,
+        "lat": 9.56
+      },
+      "zoom": {
+        "$numberLong": "6"
+      }
+    }
+  },
+  {
+    "id": 59611,
+    "city": {
+      "id": {
+        "$numberLong": "59611"
+      },
+      "name": "Gaalkacyo",
+      "findname": "GAALKACYO",
+      "country": "SO",
+      "coord": {
+        "lon": 47.430828,
+        "lat": 6.76972
+      },
+      "zoom": {
+        "$numberLong": "7"
+      }
+    }
+  },
+  {
+    "id": 62691,
+    "city": {
+      "id": {
+        "$numberLong": "62691"
+      },
+      "name": "Ceerigaabo",
+      "findname": "CEERIGAABO",
+      "country": "SO",
+      "coord": {
+        "lon": 47.36795,
+        "lat": 10.61616
+      },
+      "zoom": {
+        "$numberLong": "7"
+      }
+    }
+  },
+  {
+    "id": 62788,
+    "city": {
+      "id": {
+        "$numberLong": "62788"
+      },
+      "name": "Ceeldheer",
+      "findname": "CEELDHEER",
+      "country": "SO",
+      "coord": {
+        "lon": 47.180641,
+        "lat": 3.84878
+      },
+      "zoom": {
+        "$numberLong": "6"
+      }
+    }
+  },
+  {
+    "id": 63571,
+    "city": {
+      "id": {
+        "$numberLong": "63571"
+      },
+      "name": "Buurhakaba",
+      "findname": "BUURHAKABA",
+      "country": "SO",
+      "coord": {
+        "lon": 44.07806,
+        "lat": 2.80257
+      },
+      "zoom": {
+        "$numberLong": "9"
+      }
+    }
+  },
+  {
+    "id": 63689,
+    "city": {
+      "id": {
+        "$numberLong": "63689"
+      },
+      "name": "Buulobarde",
+      "findname": "BUULOBARDE",
+      "country": "SO",
+      "coord": {
+        "lon": 45.56744,
+        "lat": 3.85375
+      },
+      "zoom": {
+        "$numberLong": "8"
+      }
+    }
+  },
+  {
+    "id": 63795,
+    "city": {
+      "id": {
+        "$numberLong": "63795"
+      },
+      "name": "Burco",
+      "findname": "BURCO",
+      "country": "SO",
+      "coord": {
+        "lon": 45.53363,
+        "lat": 9.52212
+      },
+      "zoom": {
+        "$numberLong": "6"
+      }
+    }
+  },
+  {
+    "id": 64013,
+    "city": {
+      "id": {
+        "$numberLong": "64013"
+      },
+      "name": "Boosaaso",
+      "findname": "BOOSAASO",
+      "country": "SO",
+      "coord": {
+        "lon": 49.18158,
+        "lat": 11.28421
+      },
+      "zoom": {
+        "$numberLong": "6"
+      }
+    }
+  }
+]

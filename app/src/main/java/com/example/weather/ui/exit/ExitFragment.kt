@@ -5,27 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.weather.R
+import kotlin.system.exitProcess
 
 class ExitFragment : Fragment() {
-
-    private lateinit var exitViewModel: ExitViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        exitViewModel =
-                ViewModelProviders.of(this).get(ExitViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_exit, container, false)
-        val textView: TextView = root.findViewById(R.id.text_slideshow)
-        exitViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        Toast.makeText(this.requireContext(),"Application Closed", Toast.LENGTH_SHORT ).show()
+        exitProcess(1)
     }
 }
