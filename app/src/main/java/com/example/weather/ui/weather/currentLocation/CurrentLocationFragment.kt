@@ -42,9 +42,12 @@ class CurrentLocationFragment : Fragment() {
         configureRecyclerView(view)
         fusedLocationClient =
             LocationServices.getFusedLocationProviderClient(activity as MainActivity)
-        viewModel._livedata.observe(viewLifecycleOwner, Observer {
+
+        viewModel.getLiveDataFromDatabase(
+        ).observe(viewLifecycleOwner, Observer {
             bannerImageList.clear()
-            bannerImageList.addAll(it.list)
+            bannerImageList.addAll(it)
+            adapter.notifyDataSetChanged()
         })
         adapter = WeatherAdapter(bannerImageList, this.requireContext())
         recyclerView.adapter = adapter
