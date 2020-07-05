@@ -2,10 +2,12 @@ package com.example.weather.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.R
 import com.example.weather.model.JSONDataClass
@@ -34,7 +36,23 @@ class CityAdapter(
 
         holder.name.text = cityItem.city.name
         holder.country.text = cityItem.city.country
+        val bundle = Bundle()
+        bundle.putFloat("lat", cityItem.city.coord.lat)
+        bundle.putFloat("lon", cityItem.city.coord.lon)
+        holder.itemView.setOnClickListener {
+            Navigation.findNavController(it)
+                .navigate(R.id.action_searchFragment_to_weather5DaysFragment, bundle)
+//            Navigation.findNavController(it)
+//                .navigate(R.id.action_nav_any20cities_to_weather5DaysFragment, bundle)
 
+        }
+
+    }
+
+    fun updateList(arrayList: ArrayList<JSONDataClass>?) {
+            cityArrayList.clear()
+            cityArrayList.addAll(arrayList!!)
+            notifyDataSetChanged()
     }
 
 

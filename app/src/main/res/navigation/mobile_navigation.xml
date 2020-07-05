@@ -3,23 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_any20cities">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_any20cities"
         android:name="com.example.weather.ui.any20cities.Any20CitiesFragment"
         android:label="@string/menu_any20cities"
-        tools:layout="@layout/fragment_any20cities" />
+        tools:layout="@layout/fragment_any20cities" >
+        <action
+            android:id="@+id/action_nav_any20cities_to_weather5DaysFragment"
+            app:destination="@id/weather5DaysFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_weather"
         android:name="com.example.weather.ui.weather.WeatherFragment"
         android:label="@string/menu_weather"
-        tools:layout="@layout/fragment_weather" />
+        tools:layout="@layout/fragment_weather" >
+        <action
+            android:id="@+id/action_nav_weather_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_nav_weather_to_currentLocationFragment"
+            app:destination="@id/currentLocationFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_exit"
         android:name="com.example.weather.ui.exit.ExitFragment"
         android:label="@string/menu_exit"
         tools:layout="@layout/fragment_exit" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.weather.ui.weather.search.SearchFragment"
+        android:label="search_fragment"
+        tools:layout="@layout/search_fragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_weather5DaysFragment"
+            app:destination="@id/weather5DaysFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentLocationFragment"
+        android:name="com.example.weather.ui.weather.currentLocation.CurrentLocationFragment"
+        android:label="current_location_fragment"
+        tools:layout="@layout/current_location_fragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/weather5DaysFragment"
+        android:name="com.example.weather.ui.Weather5DaysFragment"
+        android:label="weather5_days_fragment"
+        tools:layout="@layout/weather5_days_fragment" />
 </navigation>
