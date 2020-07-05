@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.OrientationEventListener
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -11,10 +12,12 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.R
 import com.example.weather.model.JSONDataClass
+import com.example.weather.ui.weather.search.SearchFragment
 
 class CityAdapter(
     private var cityArrayList: ArrayList<JSONDataClass>
-    , private val context: Context
+    , private val context: Context,
+    val fromSearchFragment : Boolean
 
 ) : RecyclerView.Adapter<CityAdapter.CustomViewHolder>() {
 
@@ -39,12 +42,11 @@ class CityAdapter(
         val bundle = Bundle()
         bundle.putFloat("lat", cityItem.city.coord.lat)
         bundle.putFloat("lon", cityItem.city.coord.lon)
-        holder.itemView.setOnClickListener {
+        if(fromSearchFragment){
+            holder.itemView.setOnClickListener {
             Navigation.findNavController(it)
                 .navigate(R.id.action_searchFragment_to_weather5DaysFragment, bundle)
-//            Navigation.findNavController(it)
-//                .navigate(R.id.action_nav_any20cities_to_weather5DaysFragment, bundle)
-
+            }
         }
 
     }
@@ -61,5 +63,6 @@ class CityAdapter(
         var country: TextView = itemLayoutView.findViewById(R.id.country)
 
     }
+
 
 }

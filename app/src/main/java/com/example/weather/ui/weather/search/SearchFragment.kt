@@ -11,6 +11,7 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.R
@@ -42,7 +43,7 @@ class SearchFragment : Fragment() {
             adapter.updateList(it)
         })
         model.setData()
-        adapter = CityAdapter(cityList, this.requireContext())
+        adapter = CityAdapter(cityList, this.requireContext(),true)
 
         recyclerView?.adapter = adapter
         searchEdittext?.addTextChangedListener(object : TextWatcher {
@@ -72,6 +73,4 @@ class SearchFragment : Fragment() {
 
         return view
     }
-
-
 }

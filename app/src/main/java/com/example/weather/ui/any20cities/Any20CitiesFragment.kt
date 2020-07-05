@@ -35,7 +35,7 @@ class Any20CitiesFragment : Fragment() {
             adapter.notifyDataSetChanged()
         })
         model.setData()
-        adapter = CityAdapter(cityList, this.requireContext())
+        adapter = CityAdapter(cityList, this.requireContext(),false)
 
         recyclerView?.adapter = adapter
         return root
