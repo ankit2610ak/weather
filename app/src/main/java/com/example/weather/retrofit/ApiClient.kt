@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
 
-    var BASE_URL: String = "https://restcountries.eu/rest/v2/"
+    var BASE_URL: String = "http://api.openweathermap.org/data/2.5/"
     val getClient: ApiInterface
         get() {
 
