@@ -7,7 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_any20cities">Any 20 cities</string>
+    <string name="menu_any20cities">20 cities</string>
     <string name="menu_weather">Weather</string>
     <string name="menu_exit">Exit</string>
     <string name="country">Country:</string>

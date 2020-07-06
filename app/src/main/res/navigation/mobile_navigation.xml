@@ -21,11 +21,8 @@
         android:label="@string/menu_weather"
         tools:layout="@layout/fragment_weather" >
         <action
-            android:id="@+id/action_nav_weather_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_nav_weather_to_currentLocationFragment"
-            app:destination="@id/currentLocationFragment" />
+            android:id="@+id/action_nav_weather_to_weather5DaysFragment"
+            app:destination="@id/weather5DaysFragment" />
     </fragment>
 
     <fragment

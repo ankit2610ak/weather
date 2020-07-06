@@ -2,10 +2,8 @@ package com.example.weather.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.OrientationEventListener
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -14,12 +12,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.R
 import com.example.weather.model.JSONDataClass
-import com.example.weather.ui.weather.search.SearchFragment
 
 class CityAdapter(
     private var cityArrayList: ArrayList<JSONDataClass>
     , private val context: Context,
-    val fromSearchFragment : Boolean
+    val fromSearchFragment: Boolean
 
 ) : RecyclerView.Adapter<CityAdapter.CustomViewHolder>() {
 
@@ -41,15 +38,12 @@ class CityAdapter(
 
         holder.name.text = cityItem.city.name
         holder.country.text = cityItem.city.country
-       /* val bundle = Bundle()
-        bundle.putFloat("lat", cityItem.city.coord.lat)
-        bundle.putFloat("lon", cityItem.city.coord.lon)
-*/
+
         val bundle = bundleOf("lat" to cityItem.city.coord.lat, "lon" to cityItem.city.coord.lon)
-        if(fromSearchFragment){
+        if (fromSearchFragment) {
             holder.itemView.setOnClickListener {
-            Navigation.findNavController(it)
-                .navigate(R.id.action_searchFragment_to_weather5DaysFragment, bundle)
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_nav_weather_to_weather5DaysFragment, bundle)
                 Log.d("TAG", "lat: $bundle.")
             }
         }
@@ -57,9 +51,9 @@ class CityAdapter(
     }
 
     fun updateList(arrayList: ArrayList<JSONDataClass>?) {
-            cityArrayList.clear()
-            cityArrayList.addAll(arrayList!!)
-            notifyDataSetChanged()
+        cityArrayList.clear()
+        cityArrayList.addAll(arrayList!!)
+        notifyDataSetChanged()
     }
 
 
