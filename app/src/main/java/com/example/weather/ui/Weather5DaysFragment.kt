@@ -1,9 +1,12 @@
 package com.example.weather.ui
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -22,8 +25,10 @@ class Weather5DaysFragment : Fragment() {
     private lateinit var viewModel: Weather5DaysViewModel
 
     lateinit var recyclerView: RecyclerView
+    lateinit var timeText: TextView
     lateinit var adapter: WeatherAdapter
     private var bannerImageList: ArrayList<WeatherList> = ArrayList()
+    lateinit var sharedPreferences: SharedPreferences
 
 
     override fun onCreateView(
@@ -32,19 +37,36 @@ class Weather5DaysFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.weather5_days_fragment, container, false)
         viewModel = ViewModelProviders.of(this).get(Weather5DaysViewModel::class.java)
+        sharedPreferences = this.requireContext().getSharedPreferences("sharedpreference",Context.MODE_PRIVATE)
         recyclerView = view.findViewById(R.id.recycler_view_weather)
+        timeText = view.findViewById(R.id.time)
         recyclerView.layoutManager =
             LinearLayoutManager(this.requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        viewModel._livedata.observe(viewLifecycleOwner, Observer {
+
+        viewModel.getLiveDataFromDatabase(
+        ).observe(viewLifecycleOwner, Observer {
+            var arrayList = ArrayList<WeatherList>()
+            for (item in it){
+                if (item.lat == arguments?.getFloat("lat") && item.lon == arguments?.getFloat("lon")){
+                    arrayList.add(item)
+                }
+            }
+            if (arrayList.isNotEmpty()){
+                timeText.text = "Last updated: " +sharedPreferences.getString("time", " ")
+
+            }else{
+                timeText.text = "No Data Found"
+            }
             bannerImageList.clear()
-            bannerImageList.addAll(it.list)
+            bannerImageList.addAll(arrayList)
             adapter.notifyDataSetChanged()
         })
+
         adapter = WeatherAdapter(bannerImageList, this.requireContext())
 
         viewModel.getWeatherDetails(
             arguments?.getFloat("lat")!!,
-            arguments?.getFloat("lat")!!,
+            arguments?.getFloat("lon")!!,
             "b426a7540d88be5d89c501c685cee1e7"
         )
         recyclerView.adapter = adapter

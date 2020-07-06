@@ -3,11 +3,13 @@ package com.example.weather.adapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.OrientationEventListener
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.R
@@ -39,13 +41,16 @@ class CityAdapter(
 
         holder.name.text = cityItem.city.name
         holder.country.text = cityItem.city.country
-        val bundle = Bundle()
+       /* val bundle = Bundle()
         bundle.putFloat("lat", cityItem.city.coord.lat)
         bundle.putFloat("lon", cityItem.city.coord.lon)
+*/
+        val bundle = bundleOf("lat" to cityItem.city.coord.lat, "lon" to cityItem.city.coord.lon)
         if(fromSearchFragment){
             holder.itemView.setOnClickListener {
             Navigation.findNavController(it)
                 .navigate(R.id.action_searchFragment_to_weather5DaysFragment, bundle)
+                Log.d("TAG", "lat: $bundle.")
             }
         }
 

@@ -22,6 +22,7 @@
 
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -38,6 +39,24 @@
             android:orientation="horizontal">
 
         </androidx.recyclerview.widget.RecyclerView>
+
+
     </ScrollView>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        android:maxLines="3"
+        android:gravity="center"
+        android:layout_margin="@dimen/dim_36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        tools:text="Time"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
