@@ -16,6 +16,7 @@ import retrofit2.Call
 import retrofit2.Response
 import java.sql.Timestamp
 import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -40,7 +41,6 @@ class Weather5DaysViewModel(application: Application) : AndroidViewModel(applica
                 Log.d("Weather5DaysViewModel", t.message.toString())
             }
 
-            @RequiresApi(Build.VERSION_CODES.O)
             override fun onResponse(
                 call: Call<Weather>,
                 response: Response<Weather>
@@ -53,11 +53,12 @@ class Weather5DaysViewModel(application: Application) : AndroidViewModel(applica
                         list.lon = longitude
                     }
                 }
-                val timeStamp = LocalDateTime.now()
-                val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
+                val timeStamp = System.currentTimeMillis()
+                val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+                val date = Date(timeStamp)
 
                 val editor = sharedPreferences.edit()
-                editor.putString("time", timeStamp.format(formatter))
+                editor.putString("time", formatter.format(date))
                 editor.apply()
                 insertDataIntoDB(arrayList!!)
             }
@@ -76,6 +77,5 @@ class Weather5DaysViewModel(application: Application) : AndroidViewModel(applica
     ): LiveData<List<WeatherList>> {
         return weatherDatabase.sleepDatabaseDao.getAll()
     }
-
 
 }
